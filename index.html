@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Input Interface</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="interface-container">
+    <!-- Header -->
+    <header class="header">
+      <h1 class="title">📂 Input Interface</h1>
+      <p class="subtitle">Manage datasets, filters, and transformations</p>
+    </header>
+
+    <!-- Dataset Loader Section -->
+    <section class="section">
+      <h2 class="section-title">Select Dataset</h2>
+      <select id="datasetSelect" class="dropdown">
+        <option value="">-- Select a Dataiku Dataset --</option>
+        <option>dataset_sales</option>
+        <option>dataset_customers</option>
+        <option>dataset_transactions</option>
+      </select>
+      <button class="btn">Load Dataset</button>
+
+      <div id="loadMessage" class="success-message hidden">
+        ✅ Dataset successfully loaded!
+      </div>
+    </section>
+
+    <!-- Dataset Info Section -->
+    <section class="section">
+      <h2 class="section-title">Dataset Summary</h2>
+      <div class="dataset-info">
+        <p><strong>Rows:</strong> 1250</p>
+        <p><strong>Columns:</strong> 18</p>
+        <p><strong>Last Updated:</strong> 2025-10-06</p>
+      </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="section">
+      <h2 class="section-title">Apply Filters</h2>
+      <div class="filters-grid">
+        <select class="filter-dropdown"><option>Filter1</option></select>
+        <select class="filter-dropdown"><option>Filter2</option></select>
+        <select class="filter-dropdown"><option>Filter3</option></select>
+        <select class="filter-dropdown"><option>Filter4</option></select>
+        <select class="filter-dropdown"><option>Filter5</option></select>
+        <select class="filter-dropdown"><option>Filter6</option></select>
+        <select class="filter-dropdown"><option>Filter7</option></select>
+      </div>
+      <p class="filtered-count">🔍 857 rows after filtering</p>
+    </section>
+
+    <!-- Data Preview -->
+    <section class="section">
+      <h2 class="section-title">Preview</h2>
+      <div class="preview-box">
+        <table>
+          <tr><th>ID</th><th>Name</th><th>Value</th></tr>
+          <tr><td>1</td><td>Alpha</td><td>24.5</td></tr>
+          <tr><td>2</td><td>Beta</td><td>19.8</td></tr>
+          <tr><td>3</td><td>Gamma</td><td>22.1</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <!-- Tabs -->
+    <section class="section">
+      <h2 class="section-title">Input Options</h2>
+      <div class="tabs">
+        <button class="tab active">🧮 Data Editor</button>
+        <button class="tab">⚙️ Input Parameters</button>
+        <button class="tab">📎 Join CSV</button>
+      </div>
+      <div class="tab-content">
+        <p>Data editor content goes here. In Streamlit, you can embed `st.data_editor()` here.</p>
+      </div>
+    </section>
+
+    <!-- Session Management -->
+    <section class="section">
+      <h2 class="section-title">Session Edits</h2>
+      <ul class="session-log">
+        <li>Edited 3 rows in dataset_sales</li>
+        <li>Applied Filter3 on region = 'APAC'</li>
+      </ul>
+
+      <div class="button-group">
+        <button class="btn clear">Clear Session</button>
+        <!-- <button class="btn commit">Commit Changes</button> -->
+      </div>
+    </section>
+  </div>
+</body>
+</html>
