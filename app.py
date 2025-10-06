@@ -1,9 +1,10 @@
 import streamlit as st
+import streamlit.components.v1 as components
 from pathlib import Path
 
-# Force layout for stability
 st.set_page_config(layout="wide", page_title="Input Interface")
 
-# Load HTML template
-html_content = Path("input_interface.html").read_text()
-st.components.v1.html(html_content, height=1500, scrolling=True)
+base_path = Path(__file__).parent
+html_content = (base_path / "index.html").read_text()
+
+components.html(html_content, height=1500, scrolling=True)
